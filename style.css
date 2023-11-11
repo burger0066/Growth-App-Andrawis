@@ -1,0 +1,419 @@
+/* נגדיר הגדרה כללית לכל האלמנטים שכאילו נאפס הכל, את המרווח של האלמנטים מהגבול*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #4891ff;
+    --light-color: #f4f4f6;
+    --dark-color: #111;
+  }
+ /*נגדיר דברים על המשתנים שיצרנו בגוף האתר */
+body{
+    /* נשנה את סוג הכתב*/
+    font-family:'Poppins',sans-serif;
+    /* נשנה את הגודל של הכתב*/
+    font-size: 16px;
+    /* נשנה את המרחק בין מה שרשמנו לתוכן שנרשום מתחת */
+    line-height: 1.5;
+    /*צבע של הדף שלנו */
+    background-color:rgba(255, 255, 255, 0.715);
+}
+/*נגדיר דברים על המשתנים שיצרנו מסוג לינק */
+a{
+    /* נוריד את הקן שיש מתחת למילה*/
+    text-decoration: none;
+    /* נבחר צבע למשתנים ברשימה שלנו*/
+    color: rgba(45, 43, 43, 0.79);
+}
+
+ /* נוריד את הנקודות שיש ליד כל פריט ברשימה*/
+ul{
+    list-style: none;
+}
+
+ /* כאשר אני אשים תמונה אז היא לא תצא מגבולות המסך שהגדרנו*/
+img{
+    max-width: 100%;
+}
+
+/* navbar */
+.navbar{
+     /* נבחר צבע לרקע*/
+    background-color: white;
+     /*רווח מהמסגרת */
+    padding: 10px;
+}
+
+.navbar .container{
+    /*נגרום למשתנים של הרשימה לנוע ימינה כבלוק אחד כי ההגדרה שעשינו
+    אומרת שכל המשתנים יהיו בשורה(אחד ליד השני) */
+    display: flex;
+     /*  נגרום למשתנים של הרשימה לנוע לצד הנגדי של הלוגו שלנו כבלוק
+     (הלוגו יהיה בצד שמאל למעלה והרשימה צד ימין למעלה)*/
+    justify-content: space-between;
+     /* נגרום להם להיות במרכז*/
+    align-items: center;
+}
+ /* נגרום לכל המשתנים ברשימה להיות זה לצד זה בשורה*/
+.navbar .main-menu ul {
+    display: flex;
+}
+.navbar ul li a{
+     /*ניצור רווח בין המשתנים */
+    padding: 10px 12px;
+     /* נגדיר שהם יהיו בשורה אחת סימטרית*/
+    display: block;
+     /* גודל הכתב*/
+    font-weight: 600;
+     /* זה אומר שכאשר העכבר יהיה על משתנה אז יקח לו חצי שנייה
+      להחליף צבע למה שאני מגדיר*/
+    transition: 0.5s;
+}
+
+ /*הגדרת צבע למשתנים שלנו ברשימה */
+.navbar ul li a:hover{
+    color: #4891ff;
+}
+/* פה אני נותן רווח בין שני הנתונים האחרונים שלי*/
+.navbar ul li:last-child a {
+    margin-left: 10px;
+}
+.navbar ul li a i{
+    margin-right: 10px;
+}
+
+/* Hero */
+.hero{
+    margin-bottom: 50px;
+}
+/* פה אני שם את התמונות ומעדכן אותם מבחינת גודל וצורה*/
+.hero .container{
+    background:url('../images/hero-bg.png') no-repeat;
+    background-size: contain;
+    background-position: center bottom;
+    height: 550px;
+}
+/* הרווח בין ה 2 לחצנים לתמונה מתחת*/
+.hero .hero-content {
+    width: 30%;
+}
+/* שיפצור של הטקסט שרשמנו */
+.hero .hero-text {
+    width: 148%;
+    margin-bottom: 20px;
+}
+
+/* צבע לשני הלחצנים*/
+.hero-buttons a{
+    color: #4891ff;
+}
+
+/* Video classes*/
+.video-content .btn {
+    color: white;
+    background-color: #4891ff;
+}
+/*נגדיר את הגודל של תסרטון */
+.video {
+    padding: 7px 0px 10px;
+}
+/*נשים את הסרטון והכפתור בטור אחד מתחת לשני*/
+.video-content{
+    /*הפקודה הזאת שמה את הסרטון והכפתור  בשורה צמודים זה לזה*/
+    display: flex;
+    /* פה זה שם את הסרטון והכפתור בטור זה מתחת לזה */
+    flex-direction: column;
+    /*פה זה שם את הפריטים שיש לנו על ציר איקס(במקרה זה רק הכפתור) ושמה אותם במרכז*/
+    align-items: center;
+}
+.video-preview {
+   margin-bottom: 15px;
+}
+
+/*Testimonials classes*/
+
+/*מה נגדיר את הרווח בין הבלוק של הסרטון לבין הטקסט שרשמנו*/
+.testimonials{
+    padding: 40px 0;
+}
+.testimonials .testimonials-heading {
+    width: 800px;
+    margin-bottom: 40px;
+    
+    
+}
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;;
+    gap: 30px;
+}
+
+.testimonials .card p:nth-child(2){
+    margin-top: 30px;
+    font-weight: bold;
+}
+/* Pricing */
+
+/*בכל המחלקה הזאת אני מסדר את המחלקה מבחינת עיצוה הזזה ועוד*/
+.pricing-grid{
+    display: grid;
+    grid-template-columns:1fr 1fr ;
+    margin-top: 15px;
+    gap: 25px;
+}
+
+.pricing-card-subheading{
+    margin-bottom:30px;
+}
+.pricing-card-price{
+    margin-bottom: 30px;
+    margin: 20px 0;
+    border-bottom: 1px solid rgb(245, 245, 245);
+}
+.pricing-card-body ul{
+    margin: 30px 0;
+}
+.pricing-card-body ul li{
+    margin-bottom: 20px;
+}
+.pricing-card-body ul li i{
+    margin-right: 10px;
+}
+
+.pricing .pricing-footer{
+    margin: 30px 0;
+}
+
+.pricing-card-body a{
+    background-color: #4891ff;
+    color: white;
+    margin-top: 10px;
+}
+    /*FAQ*/
+.faq {
+    padding: 40px 0;
+}
+/*פה אני מסדר את הקבוצה של השאלה והתשובה מבחינה שאני שם קו מתחת ועושה רווחים*/
+.faq .faq-group {
+    border-bottom: 1px solid rgb(168, 168, 168);
+    padding-bottom: 20px;
+}
+/*  פה אני מסדר את השורה ששואלים את השאלה ואת האייקון*/
+.faq .faq-group .faq-group-header {
+    padding: 20px 0;
+    margin-bottom: 15px;
+    position: relative   
+}
+/*פה אני מסדר רק את השורה ששואלים את השאלה*/
+.faq .faq-group .faq-group-header h4 {
+    font-weight: 600;
+    width: 95%;
+}
+/*פה אני מסדר את האייקון מבחינת הגודל והמיקום שלו*/
+.faq .faq-group .faq-group-header i {
+    position: absolute;
+    right: 0;
+    top: 43px;
+    font-size: 20px;
+    /*הפקודה הזאת עושה שכאשר העכבר שלי נוגע באייקון אז יש סימן של לחצן על המסך */
+    cursor: pointer;
+}
+/*הפקודה הזאת מסתירה את כל התוכן של התשובות */
+.faq .faq-group .faq-group-body {
+    display: none;
+}
+/*הפקודה הזאת עושה שרק התשובה של השאלה הראשונה תהיה מוצגת לנו על המסך*/
+.faq .faq-group .faq-group-body.open {
+    display: block  ;
+}
+/*פה אני מעצב את התפריט שלי מבחינת גודל , צורה , צבע ועוד*/
+.faq ul.faq-menu {
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: darkgray;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.faq ul.faq-menu li  {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+.faq ul.faq-menu li.active {
+    background-color: #4891ff;
+    color: #fff;
+}
+
+/* Footer */
+.footer {
+    padding: 40px 0;
+}
+.footer h4 {
+    margin-bottom: 10px;
+}
+
+.footer ul li {
+    line-height: 2.5;
+}
+
+.footer a {
+    color: #ccc;
+}
+
+.footer i {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+.footer-grid .a {
+    background-color: #7d1d1d;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns:2fr 1fr 1fr 1fr ;
+    margin-top: 10px;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+.footer .card {
+    margin: 15px 15px 15px 0;
+    
+}
+
+.footer input[type='email'] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+
+/*Utility classes */
+
+/* פה נגדיר שכאשר אנחנו מותחים את האתר אז התוכן נשאר במקום
+ ובנוסף נגדיר פה רווחים מהשוליים*/
+.container {
+    max-width: 1100px;
+    /*רווח בין האלמנטים ושנגדיר את המשתנים שיהיו באמצע*/
+    margin: 0 auto;
+     /* שהרווח מהמסגרת למעלה יהיה 0 אבל מהצדדים יהיה 15*/
+    padding: 0 15px;
+}
+.container-sm {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Card */
+.card {
+    background: white;
+    color: black;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/*buttons */
+ /* נגדיר פה דברים על הכפתור שלנו (כפתור ה Log in)*/
+.btn {
+    display: inline-block;
+    padding: 13px 20px;
+    background-color: lightgray;
+    color: rgba(0, 0, 0, 0.77);
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.5s;
+    text-align: center;
+}
+
+ /* נהפוך את הכפתור שלנו לצבע יותר בהיר*/
+.btn:hover{
+    opacity: 0.8;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: #fff;
+  }
+  .btn-block {
+    display: block;
+    width: 100%;
+  }
+
+/* Text Classes*/
+/* פה אני מגדיר את גודל הטקסט שרשמנו ב H1*/
+.text-xxl{
+    font-size: 2rem;
+    line-height: 1.2;
+    font-weight: 600;
+    margin: 40px 0 20px;
+}
+
+.text-xl{
+    font-size: 2.2rem;
+    line-height: 1.4;
+    font-weight: normal;
+    margin: 40px 0 20px;
+}
+
+.text-lg{
+    font-size: 1.8rem;
+    line-height: 1.4;
+    font-weight: normal;
+    margin: 30px 0 20px;
+}
+
+.text-md{
+    font-size: 1.2rem;
+    line-height: 1.4;
+    font-weight: normal;
+    margin: 20px 0 10px;
+}
+
+.text-sm{
+    font-size: 0.9rem;
+    line-height: 1.4;
+    font-weight: normal;
+    margin: 10px 0 5px;
+}
+
+.text-center{
+    text-align: center;
+}
+
+/*Background*/
+.bg-primary{
+    background: rgba(32, 30, 30, 0.966);
+    color: #fff;
+}
+.bg-light{
+    background:lightgray;
+    color: #333;
+}
+.bg-dark{
+    background: rgba(32, 30, 30, 0.966);
+    color: #fff;
+}
+.bg-black{
+    background: black;
+    color: #fff;
+}
+
+
+
+
